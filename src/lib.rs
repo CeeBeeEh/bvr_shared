@@ -12,9 +12,9 @@ use crate::bvr_image::BvrImage;
 use crate::model_config::ModelConfig;
 
 pub trait BvrDetector {
-    fn is_running() -> impl std::future::Future<Output = anyhow<bool>> + Send;
-    fn init_detector(model_details: ModelConfig) -> impl std::future::Future<Output = anyhow<()>> + Send;
-    fn detect(bvr_image: BvrImage) -> impl std::future::Future<Output = anyhow<Vec<BvrDetection>>> + Send;
+    fn is_running() -> impl std::future::Future<Output = Result<bool, anyhow::Error>> + Send;
+    fn init_detector(model_details: ModelConfig) -> impl std::future::Future<Output = Result<(), anyhow::Error>> + Send;
+    fn detect(bvr_image: BvrImage) -> impl std::future::Future<Output = Result<Vec<BvrDetection>, anyhow::Error>> + Send;
     fn get_library_inference_devices() -> Vec<&'static str>;
     fn is_valid_inference_device(inference_device: String) -> bool;
     fn get_library_inference_processors() -> Vec<&'static str>;
