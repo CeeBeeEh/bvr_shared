@@ -15,5 +15,7 @@ pub trait BvrDetector {
     fn detect(&self, bvr_image: BvrImage) -> impl std::future::Future<Output = Result<Vec<BvrDetection>>> + Send;
     fn get_library_device_types(&self) -> Vec<&'static str>;
     fn is_valid_device_type(&self, device_type: String) -> bool;
+    fn get_library_processing_types(&self) -> Vec<&'static str>;
+    fn is_valid_processing_type(&self, processing_type: String) -> bool;
     fn get_interface_version(&self) -> String;
 }
