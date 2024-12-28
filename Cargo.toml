@@ -1,0 +1,10 @@
+[package]
+name = "bvr_shared"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+serde = { version = "1.0.216", features = ["derive"] }
+image = "0.25.5"
+anyhow = "1.0.95"
+async-trait = "0.1.83"
