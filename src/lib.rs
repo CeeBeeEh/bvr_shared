@@ -1,6 +1,6 @@
-mod bvr_box;
-mod bvr_detection;
-mod bvr_image;
+pub mod bvr_box;
+pub mod bvr_detection;
+pub mod bvr_image;
 
 pub const INTERFACE_VERSION: &str = "0.2.1";
 
